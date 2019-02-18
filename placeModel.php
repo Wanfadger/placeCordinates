@@ -2,9 +2,9 @@
 
     class PlaceCordinates
     {
-        $location;
-        $lat;
-        $lng;
+       private $location;
+       private $lat;
+       private $lng;
 
 
         /**
@@ -19,7 +19,6 @@
         {
                 $this->location = $location;
 
-                return $this;
         }
 
 
@@ -34,8 +33,6 @@
         public function setLng($lng)
         {
                 $this->lng = $lng;
-
-                return $this;
         }
 
         /**
@@ -51,7 +48,6 @@
         {
                 $this->lat = $lat;
 
-                return $this;
         }
     }
     
