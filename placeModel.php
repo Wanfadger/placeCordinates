@@ -2,9 +2,9 @@
 
     class PlaceCordinates
     {
-       private $location;
-       private $lat;
-       private $lng;
+       public $location;
+       public $lat;
+       public $lng;
 
 
         /**

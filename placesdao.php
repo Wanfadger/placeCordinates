@@ -6,22 +6,22 @@ class PlacesDao extends Database
 {
     private  const DB_TABLE = "location";
 
-    public static function savePlaceCordinates(Array $placeCordinates){
+    public static function savePlaceCordinates(PlaceCordinates $placeCordinate){
     $conn = Database::dbConnection();
-        foreach ($placeCordinates as $placeCordinate) {
+       // foreach ($placeCordinates as $placeCordinate) {
             $sqlString = "INSERT INTO ".self::DB_TABLE."(Nameofplace , longitude , latitude) VALUES(:placename , :lat , :lng)";
             $stmt = $conn->prepare($sqlString);
             $stmt->bindValue(":placename" , $placeCordinate->getLocation());
             $stmt->bindValue(":lat" , $placeCordinate->getLat());
             $stmt->bindValue(":lng" , $placeCordinate->getLng());
             if($stmt->execute()){
-                echo "succefully submitted";
+                echo 1;
             }else{
-                break;
+                echo 0;
             }
             echo $placeCordinate->getLocation()."\n";
         }
-    }
+    //}
 }
 
 
